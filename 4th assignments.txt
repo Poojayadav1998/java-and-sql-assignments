@@ -1,0 +1,212 @@
+package arraylist;
+
+import java.util.ArrayList;
+
+import java.util.Collections;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> al = new ArrayList<>();
+		al.add(10);
+		al.add(20);
+		al.add(90);
+		al.add(80);
+		al.add(70);
+		al.add(60);
+		al.add(50);
+		al.add(40);
+		al.add(30);
+		
+		System.out.println(al);
+		System.out.println(al.get(3));//to accessing the element
+		al.set(1, 100);//changing the element
+		System.out.println(al);
+		
+		Collections.sort(al);//sort the elements in the list
+		System.out.println(al);
+		System.out.println(al.remove(1));
+		al.size();//used to return the number of elements present in the list
+		System.out.println(al);
+		
+		al.trimToSize();//used to trim the capacity of the arraylist
+		System.out.println(al);
+		
+		System.out.println(al.indexOf(30));//
+		al.addAll(al);//it added all the elements
+		System.out.println(al);
+		al.ensureCapacity(5);//capacity of arraylist
+		System.out.println(al);
+		
+		
+		System.out.println(al.lastIndexOf(100));//will get the last index value
+		
+		al.clear();
+		System.out.println(al);
+	
+		
+	
+	}
+	
+		
+
+}
+
+output:
+[10, 20, 90, 80, 70, 60, 50, 40, 30]
+80
+[10, 100, 90, 80, 70, 60, 50, 40, 30]
+[10, 30, 40, 50, 60, 70, 80, 90, 100]
+30
+[10, 40, 50, 60, 70, 80, 90, 100]
+[10, 40, 50, 60, 70, 80, 90, 100]
+-1
+[10, 40, 50, 60, 70, 80, 90, 100, 10, 40, 50, 60, 70, 80, 90, 100]
+[10, 40, 50, 60, 70, 80, 90, 100, 10, 40, 50, 60, 70, 80, 90, 100]
+15
+[]
+2)LINKED LIST 
+
+package arraylist;
+
+import java.util.LinkedList;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList<String> l = new LinkedList<>();
+		l.add("hindi");
+		l.add("arabic");
+		l.add("telugu");
+		l.add("kannada");
+		l.add("english");
+		l.add(1, "spanish");
+		
+		System.out.println(l);
+		l.addFirst("bhojpuri");//insert  the element at first position
+		System.out.println(l);
+		l.addLast("bihari");//insert the elemnts at last
+		System.out.println(l);
+		
+		System.out.println(l.getFirst());
+		System.out.println(l.getLast());
+	    System.out.println(	l.get(1));
+	    
+	    l.offer("bengali");//it adds the elements at the last
+	    System.out.println(l);
+		
+		l.offerFirst("malayalam");//it adds the elements at first
+		System.out.println(l);
+		
+		System.out.println(l.peek());//it retrieves the first elements of the list
+		
+		System.out.println(l.peekFirst());//it retrieves the first elements of the list
+		
+		System.out.println(l.peekLast());//it retrives the last elements of the list
+		
+		System.out.println(l.poll());//it retrives and remove the first elements of the list
+		
+		System.out.println(l.pollFirst());//it retrives and remove the first elements of the list
+		
+		System.out.println(l.pollLast());
+		
+		System.out.println(l);
+		
+		l.set(1, "bengali");
+		System.out.println(l);
+		
+		l.size();
+		System.out.println(l);
+		
+		l.remove("arabic");
+		System.out.println(l);
+		
+		l.removeFirst();
+		System.out.println(l);
+		
+		l.removeLast();
+		System.out.println(l);
+		
+		l.clear();
+		System.out.println(l);
+		
+		
+
+	}
+
+}
+OUTPUT:
+[hindi, spanish, arabic, telugu, kannada, english]
+[bhojpuri, hindi, spanish, arabic, telugu, kannada, english]
+[bhojpuri, hindi, spanish, arabic, telugu, kannada, english, bihari]
+bhojpuri
+bihari
+hindi
+[bhojpuri, hindi, spanish, arabic, telugu, kannada, english, bihari, bengali]
+[malayalam, bhojpuri, hindi, spanish, arabic, telugu, kannada, english, bihari, bengali]
+malayalam
+malayalam
+bengali
+malayalam
+bhojpuri
+bengali
+[hindi, spanish, arabic, telugu, kannada, english, bihari]
+[hindi, bengali, arabic, telugu, kannada, english, bihari]
+[hindi, bengali, arabic, telugu, kannada, english, bihari]
+[hindi, bengali, telugu, kannada, english, bihari]
+[bengali, telugu, kannada, english, bihari]
+[bengali, telugu, kannada, english]
+[]
+
+
+3)PRIORITY QUEUE
+
+package arraylist;
+
+import java.util.PriorityQueue;
+
+public class Demo7 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		PriorityQueue<String> q = new PriorityQueue<>();
+		q.add("Pooja");
+		q.add("sushmita");
+		q.add("punita");
+		q.add("sunita");
+		q.add("pihu");
+		q.add("mushkan");
+		q.add("suman");
+		q.add("Girija");
+		System.out.println(q);
+		
+		q.add("sita");
+		System.out.println(q);
+		
+		q.offer("rima");
+		System.out.println(q);
+		
+		q.poll();
+		System.out.println(q);
+		
+		System.out.println(q.element());
+		
+		System.out.println(q.peek());
+		
+		q.clear();
+		System.out.println(q);
+
+	}
+
+}
+OUTPUT:
+[Girija, Pooja, mushkan, pihu, sunita, punita, suman, sushmita]
+[Girija, Pooja, mushkan, pihu, sunita, punita, suman, sushmita, sita]
+[Girija, Pooja, mushkan, pihu, rima, punita, suman, sushmita, sita, sunita]
+[Pooja, pihu, mushkan, sita, rima, punita, suman, sushmita, sunita]
+Pooja
+Pooja
+[]

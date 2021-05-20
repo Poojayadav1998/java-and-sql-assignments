@@ -1,0 +1,238 @@
+2nd questions
+//single level inheritance
+ 
+class one {
+    public void print_pooh()
+    {
+        System.out.println("Pooh");
+    }
+}
+ 
+class two extends one {
+    public void print_for() { System.out.println("for"); }
+}
+public class Main {
+    public static void main(String[] args)
+    {
+        two g = new two();
+        g.print_pooh();
+        g.print_for();
+        g.print_pooh();
+    }
+}
+output:
+Pooh 
+for 
+Pooh
+
+
+
+
+//multilevel
+
+class one {
+    public void print_ram()
+    {
+        System.out.println("ram");
+    }
+}
+ 
+class two extends one {
+    public void print_with() { System.out.println("with"); }
+}
+ 
+class three extends two {
+    public void print_ram()
+    {
+        System.out.println("sita");
+    }
+}
+
+public class Main {
+    public static void main(String[] args)
+    {
+        three g = new three();
+        g.print_ram();
+        g.print_with();
+        g.print_ram();
+    }
+}
+output:
+ram
+with
+sita
+//hierarchical
+
+
+class A {
+    public void print_A() { System.out.println("Class A"); }
+}
+ 
+class B extends A {
+    public void print_B() { System.out.println("Class B"); }
+}
+ 
+class C extends A {
+    public void print_C() { System.out.println("Class C"); }
+}
+ 
+class D extends A {
+    public void print_D() { System.out.println("Class D"); }
+}
+ 
+
+public class Test {
+    public static void main(String[] args)
+    {
+        B obj_B = new B();
+        obj_B.print_A();
+        obj_B.print_B();
+ 
+        C obj_C = new C();
+        obj_C.print_A();
+        obj_C.print_C();
+ 
+        D obj_D = new D();
+        obj_D.print_A();
+        obj_D.print_D();
+    }
+}
+
+output:Class A
+Class B
+Class A
+Class C
+Class A
+Class D
+
+
+//multilevel inheritance
+
+
+interface one {
+    public void print_pooh();
+}
+ 
+interface two {
+    public void print_for();
+}
+ 
+interface three extends one, two {
+    public void print_pooh();
+}
+class child implements three {
+    @Override public void print_pooh()
+    {
+        System.out.println("Pooh");
+    }
+ 
+    public void print_for() { System.out.println("for"); }
+}
+ 
+public class Main {
+    public static void main(String[] args)
+    {
+        child c = new child();
+        c.print_pooh();
+        c.print_for();
+        c.print_pooh();
+    }
+}
+
+output:Pooh
+for
+Pooh
+
+//hybrid :
+
+class SolarSystem {
+}
+class Earth extends SolarSystem {
+}
+class Mars extends SolarSystem {
+}
+public class Moon extends Earth {
+    public static void main(String args[])
+    {
+        SolarSystem s = new SolarSystem();
+        Earth e = new Earth();
+        Mars m = new Mars();
+ 
+        System.out.println(s instanceof SolarSystem);
+        System.out.println(e instanceof Earth);
+        System.out.println(m instanceof SolarSystem);
+    }
+}
+output:
+true
+true
+true
+
+
+//abstract class
+
+abstract class Animal{
+   
+   public abstract void sound();
+}
+
+public class Dog extends Animal{
+
+   public void sound(){
+	System.out.println("Woof");
+   }
+   public static void main(String args[]){
+	Animal obj = new Dog();
+	obj.sound();
+   }
+}
+
+output:Woof
+
+1st questions
+
+package inheritance;
+
+public class Rawproducts {
+    
+	private int productid;
+	protected String productname;
+	public Double price=120.00;
+public int GetProductId()
+{
+	return productid;
+}
+public void SetProductid(int prodid)
+{
+	productid=prodid;
+}
+public String GetProductName()
+{
+	return productname;
+}
+public void SetProductName(String prodname)
+{
+	productname=prodname;
+}
+public void ProdPrice()
+{
+	System.out.println("Product Price is "+price);
+}
+}
+
+public class Products extends Rawproducts{
+
+	public static void main(String[] args) {
+		Rawproducts r=new Rawproducts();
+		r.SetProductid(10);
+		System.out.println("Product Id: "+r.GetProductId());
+		r.SetProductName("Rice");
+		System.out.println("ProductName: "+r.GetProductName());	
+		r.ProdPrice();
+	}
+
+}
+output:
+ProductId:10
+ProductName:Rice
+ProductPrice:120.00
