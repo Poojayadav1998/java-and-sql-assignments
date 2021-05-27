@@ -1,0 +1,284 @@
+1.calculator by using html,css,js.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CALCULATOR</title>
+</head>
+<body>
+        <div class="container">
+            <h1>Calculator By POOJA YADAV</h1>
+    
+            <div class="calculator">
+                <input type="text" name="screen" id="screen">
+                <table>
+                    <tr>
+                        <td><button>(</button></td>
+                        <td><button>)</button></td>
+                        <td><button>C</button></td>
+                        <td><button>%</button></td>
+                    </tr>
+                    <tr>
+                        <td><button>7</button></td>
+                        <td><button>8</button></td>
+                        <td><button>9</button></td>
+                        <td><button>X</button></td>
+                    </tr>
+                    <tr>
+                        <td><button>4</button></td>
+                        <td><button>5</button></td>
+                        <td><button>6</button></td>
+                        <td><button>-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button>1</button></td>
+                        <td><button>2</button></td>
+                        <td><button>3</button></td>
+                        <td><button>+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button>0</button></td>
+                        <td><button>.</button></td>
+                        <td><button>/</button></td>
+                        <td><button>=</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+    </body>
+    <script src="index.js"></script>
+    
+    </html>
+
+.container{
+    text-align: center;
+    margin-top:23px
+}
+
+table{
+    margin: auto;
+}
+
+input{
+    border-radius: 21px;
+    border: 5px solid #244624;
+    font-size:34px;
+    height: 65px;
+    width: 456px;
+}
+
+button{
+    border-radius: 20px;
+    font-size: 40px;
+    background: #978fa0;
+    width: 102px;
+    height: 90px;
+    margin: 6px;
+}
+
+.calculator{ 
+    border: 4px solid #13695d;
+    background-color: #ff99f7;
+    padding: 23px;
+    border-radius: 53px;
+    display: inline-block;
+    
+}
+
+h1{
+    font-size: 28px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+et screen = document.getElementById('screen');
+buttons = document.querySelectorAll('button');
+let screenValue = '';
+for (item of buttons) {
+    item.addEventListener('click', (e) => {
+        buttonText = e.target.innerText;
+        console.log('Button text is ', buttonText);
+        if (buttonText == 'X') {
+            buttonText = '*';
+            screenValue += buttonText;
+            screen.value = screenValue;
+        }
+        else if (buttonText == 'C') {
+            screenValue = "";
+            screen.value = screenValue;
+        }
+        else if (buttonText == '=') {
+            screen.value = eval(screenValue);
+        }
+        else {
+            screenValue += buttonText;
+            screen.value = screenValue;
+        }
+
+    })
+}
+
+2) creating forms by having first name, last name,age,email,submit.
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Form Validation</title>
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+
+<body>
+    <h1>Welcome to my form !</h1>
+    <form aciton ="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
+        <div class="formdesign" id="name">
+            First Name: <input type="text" name="fname" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="name">
+            Last Name: <input type="text" name="lname" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="email">
+            Email: <input type="email" name="femail" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="age">
+            Age: <input type="age" name="fage" required><b><span class="formerror"> </span></b>
+        </div>
+
+        
+        <input class="but" type="submit" value="Submit">
+
+    </form>
+</body>
+<script src="index1.js"></script>
+
+</html>
+
+body {
+    padding: 10px 50px;
+}
+
+.formdesign {
+    font-size: 20px;
+
+}
+
+.formdesign input {
+    width: 50%;
+    padding: 12px 20px;
+    border: 1px solid blue;
+    margin: 14px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.formerror {
+    color: red;
+}
+
+.but {
+    border-radius: 9px;
+    width: 100px;
+    height: 50px;
+    font-size: 25px;
+    margin: 22px 20px;
+}
+
+function clearErrors(){
+
+    errors = document.getElementsByClassName('formerror');
+    for(let item of errors)
+    {
+        item.innerHTML = "";
+    }
+
+
+}
+function seterror(id, error){
+    //sets error inside tag of id 
+    element = document.getElementById(id);
+    element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+}
+
+function validateForm(){
+    var returnval = true;
+    clearErrors();
+
+    //perform validation and if validation fails, set the value of returnval to false
+    var name = document.forms['myForm']["fname"].value;
+    if (fname.length<4){
+        seterror("name", "*Length of fname is too short");
+        returnval = false;
+        
+    }
+    var name = document.forms['myForm']["lname"].value;
+    if (lname.length<3){
+        seterror("name", "*Length of lname is too short");
+        returnval = false;
+        
+    }
+
+    if (name.length == 0){
+        seterror("name", "*Length of name cannot be zero!");
+        returnval = false;
+    }
+
+    var email = document.forms['myForm']["femail"].value;
+    if (email.length>15){
+        seterror("email", "*Email length is too long");
+        returnval = false;
+    }
+
+    var age= document.forms['myForm']["fage"].value;
+    if (age.length != 2){
+        seterror("age", "* age should be of 2 digits!");
+        returnval = false;
+    }
+
+    
+
+    return returnval;
+}
+
+
+3) var let const
+var:
+When using var our local scope is within a function. 
+This means that a variable with the same name can be used in two separate functions as each has their own local scope. 
+In fact, we can use the same variable three times if we also include it in the global scope.
+ Let:
+the let keyword is block-scoped which means that its scope is the nearest enclosing block.
+let: function block
+Within a normal function block var and let will behave the same if the variables are declared first
+Const:
+The const keyword performs exactly like let with one distinction: 
+the variable binding cannot change. 
+In other words, once you bind a variable to an object, you can’t reassign that variable.
+
+4)differences between statically and dynamically typed language
+
+Statically typed languages:
+A language is statically typed if the type of a variable is known at compile time. For some languages this means that you as the programmer must specify what type each variable is (e.g.: Java, C, C++); other languages offer some form of type inference, the capability of the type system to deduce the type of a variable (e.g.: OCaml, Haskell, Scala, Kotlin)
+
+The main advantage here is that all kinds of checking can be done by the compiler, and therefore a lot of trivial bugs are caught at a very early stage.
+
+Examples: C, C++, Java, Rust, Go, Scala
+
+A language is dynamically typed if the type is associated with run-time values, and not named variables/fields/etc. This means that you as a programmer can write a little quicker because you do not have to specify types every time (unless using a statically-typed language with type inference).
+
+Examples: Perl, Ruby, Python, PHP, JavaScript
+
+Most scripting languages have this feature as there is no compiler to do static type-checking anyway, but you may find yourself searching for a bug that is due to the interpreter misinterpreting the type of a variable. Luckily, scripts tend to be small so bugs have not so many places to hide.
+
+Most dynamically typed languages do allow you to provide type information, but do not require it.
