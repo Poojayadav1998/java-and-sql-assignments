@@ -1,0 +1,199 @@
+1) 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traingular seqences</title>
+</head>
+<body>
+    <script>
+        function triangular_series(n){
+            let i,j=1,k=1;
+            for(i=1;i<=n;i++)
+            {
+                document.write(k+" ");
+                j=j+1;
+                k=k+j;
+
+            }
+        }
+        let n=6;
+        triangular_series(n);
+
+    </script>
+</body>
+</html>
+
+output:1 3 6 10 15 21
+
+2)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime number</title>
+</head>
+<body>
+    <h1>Prime number from 1 to 50</h1>
+    <script>
+        function print_prime(n){
+            let i,j,flag;
+            
+            for(i=1;i<=n;i++)
+            {
+                if(i==1 || i==0)
+                continue;
+                flag = 1;
+                for(j=2;j<=i/2;j++){
+                    if(i%j == 0){
+                        flag=0;
+                        break;
+                    }
+                }
+                if(flag==1)
+                document.write(i+ "   ")
+            }
+        }
+        let n=50;
+        print_prime(n);
+    </script>
+</body>
+</html>
+
+output:2 3 5 7 11 13 17 19 23 29 31 37 41 43 47
+
+3)print the p
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern program</title>
+</head>
+<body>
+    <h2>Right angle triangle</h2>
+    <script>
+        let n=5;
+        let string = "";
+        for(let i=0;i<n;i++){
+            for(j=0;j<=i;j++){
+                string +="*";
+            }
+            string +="<br>";
+        }
+        document.write(string);
+    </script>
+</body>
+</html>
+
+output:
+*
+**
+***
+****
+*****
+******
+
+4)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyramid triangle star pattern - javascript</title>
+</head>
+<body>
+  <h2>Pyramid triangle star pattern</h2>
+  <script>
+    let n = 5;
+    let string = "";
+
+    for (let i = 1; i <= n; i++) {
+    
+      for (let j = n; j > i; j--) {
+        string += " ";
+      }
+    
+      for (let k = 0; k < i * 2 - 1; k++) {
+        string += "*";
+      }
+      string += "<br>";
+    }
+    document.write(`<pre>${string}</pre>`);
+  </script>
+</body>
+</html>
+
+output:
+
+    *
+   ***
+  *****
+ *******
+*********
+5)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond star pattern - javascript</title>
+</head>
+<body>
+  <h2>Diamond star pattern in javascript</h2>
+  <script>
+    let n = 8; 
+    let string = "";
+    
+    for (let i = 1; i <= n; i++) {
+      
+      for (let j = n; j > i; j--) {
+        string += " ";
+      }
+      
+      for (let k = 0; k < i * 2 - 1; k++) {
+        string += "*";
+      }
+      string += "\n";
+    }
+
+    for (let i = 1; i <= n - 1; i++) {
+      
+      for (let j = 0; j < i; j++) {
+        string += " ";
+      }
+    
+      for (let k = (n - i) * 2 - 1; k > 0; k--) {
+        string += "*";
+      }
+      string += "\n";
+    }
+    document.write(`<pre>${string}</pre>`);
+  </script>
+</body>
+</html>
+
+output:
+       *
+      ***
+     *****
+    *******
+   *********
+  ***********
+ *************
+***************
+ *************
+  ***********
+   *********
+    *******
+     *****
+      ***
+       *
