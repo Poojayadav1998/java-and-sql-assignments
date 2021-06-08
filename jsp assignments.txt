@@ -1,0 +1,68 @@
+1.create a jsp page
+ i)using scriplets tags
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>My first jsp page</title>
+</head>
+<body>
+<h1>JSP DEMO DAY ONE</h1>
+<p>Looking into declarations tag,java servlets,jsp expressions,java comments</p>
+<% 
+int a=2;
+int b=1;
+int c = a+b;
+out.println("value is"+c);
+%>
+</body>
+</html>
+
+ii)using expressions tags
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<%
+       int count = 2;
+   	%>
+  	<body>
+        Page Count is <%= ++count %>   
+  	</body>
+</html>
+
+iii)declarative tags
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+    <%!
+        int count = 1;
+    %>
+    <body>
+        Page Count is:  
+        <% out.println(++count); %>
+    </body>
+</html>
+
+2)reason to use jsp?
+
+JSP supports both scripting and element-based dynamic content, 
+and allows programmers to develop custom tag libraries to satisfy application-specific needs. 
+JSP pages are precompiled for efficient server processing.
+
+3)Reloading and rerunning the server will they go through lifecycle in both both cases?
+
+when the server loads the servlet and jsp, and will not call the init method again unless the server is reloading the servlet and jsp.
+ The server can not reload a servlet and jsp until after the server has destroyed the servlet by running the destroy method.
