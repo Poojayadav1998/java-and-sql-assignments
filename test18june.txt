@@ -1,0 +1,437 @@
+//2)	create Java programs to check if the given number is an Armstrong number or not.
+
+public class Armstrong {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num = 567,originalnumber,rem,result=0;
+		originalnumber = num;
+		while(originalnumber!=0)
+		{
+			rem=originalnumber%10;
+			result =result+(rem*rem*rem);
+			originalnumber /=10;
+			
+			
+		}
+		if(result==num)
+			System.out.println(num+"is an armstrong");
+		else
+			System.out.println(num+ "is not an armstrong");
+		
+		
+
+	}
+
+}
+
+//output:567is not an armstrong
+
+
+//9)	Write a Java Program to find the duplicate characters in a string.
+public class DuplicateChar {
+
+	public static void main(String[] args) {
+		String str = "madamRadar";  
+        int count;  
+          
+        //Converts given string into character array  
+        char str1[] = str.toCharArray();  
+          
+        System.out.println("Duplicate characters in a given string: ");  
+        //Counts each character present in the string  
+        for(int i = 0; i <str1.length; i++) {  
+            count = 1;  
+            for(int j = i+1; j <str1.length; j++) {  
+                if(str1[i] == str1[j] && str1[i] != ' ') {  
+                    count++;  
+                    //Set string[j] to 0 to avoid printing visited character  
+                    str1[j] = '0';  
+                }  
+            }  
+            //A character is considered as duplicate if count is greater than 1  
+            if(count > 1 && str1[i] != '0')  
+                System.out.println(str1[i]);  
+        }  
+    }  
+}  
+
+//output:
+//Duplicate characters in a given string: 
+//m
+//a
+//d
+
+@WebServlet("/Lifecycle")
+public class Lifecycle extends HttpServlet {
+
+	static {
+		System.out.println("static block executed (class is loaded)...");
+	}
+	
+	public Lifecycle() {
+		System.out.println("servlet object is created...");
+	}
+	
+	public void init()
+	{
+		System.out.println("init method called...");
+	}
+	
+	public void service(HttpServletRequest request, HttpServletResponse response)
+	{
+		System.out.println("service method called...");
+	}
+	public void destroy() {
+		System.out.println("Destroy method called");  
+	}
+
+}
+
+
+//16)	How to find if a number is the power of 2 in Java?
+public class Numpowerof2 {
+	
+	static boolean isPowerOfTwo(int n){
+		if(n==0) 
+			return false;
+		
+		while(n!=1){
+			if(n%2!=0)
+				return false;
+			n=n/2;
+		}
+		return true;
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		if(isPowerOfTwo(64))
+			System.out.println("yes");
+		else{
+			System.out.println("no");
+		}
+			
+
+	}
+
+}
+
+//output:yes
+
+//12)Find the number occurring odd number of times in an array.
+public class OddOccur {
+	
+	static int oddOccurence(int a[],int a_size){
+		int i;
+		for(i=0;i<a_size;i++){
+			int count =0;
+			for(int j=0;j<a_size;j++){
+				if(a[i]==a[j])
+					count++;
+				
+			}
+			if(count % 2 !=0)
+				return a[i];
+			}
+			return -1;
+		}
+	
+		public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			int a[]=new int[]{5,7,2,7,5,2,5};
+			int n=a.length;
+			System.out.println(oddOccurence(a,n));
+
+	}
+
+//1)	Take the input of number from user and check number is Palindrome or not in Java.
+
+import java.util.Scanner;
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		System.out.println("insert a number from user");
+		int n= scan.nextInt();
+		int sum = 0,r;
+		int temp = n;
+		while(n>0){
+			r=n%10;
+			sum = (sum*10)+r;
+					n= n/10;
+			
+		}
+		if(temp==sum){
+			System.out.println(" palindrome");
+		}
+		else
+			System.out.println("not palindrome");
+}
+}
+
+//8)	Write a Java Program to find whether a string or number is palindrome or not.
+import java.util.Scanner;
+
+public class palinString {
+
+	public static void main(String[] args) {
+		String str = "Madam",reverseStr="";
+		int strLength=str.length();
+		
+		for(int i=(strLength-1);i>=0;--i){
+			reverseStr = reverseStr+str.charAt(i);
+			
+		}
+		if(str.toLowerCase().equals(reverseStr.toLowerCase())){
+			System.out.println(str + "is a palindrome");
+		}
+		else{
+			System.out.println(str + "is not a palindrome");
+		}
+	}
+}
+
+
+
+//output:Madamis a palindrome
+
+		
+//15)	Java program to print the following patterns
+/*a) 1
+  222
+ 33333
+4444444*/
+
+
+public class Pattern1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		        for (int i = 1; i <= 4; i++)
+		        {
+		            for (int j = 4 - i; j >= 1; j--)
+		            {
+		                System.out.print(" ");
+		            }
+		            for (int j = 1; j <= 2 * i - 1; j++)
+		            {
+		                System.out.print(i);
+		            }
+		            System.out.println();
+		        }
+		
+	}
+
+//32123
+
+public class Pattern2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		        for (int i = 1; i <= 3; i++)
+		        {
+		            int n = 3;
+		   
+		            for (int j = 1; j<= n - i; j++) { 
+		            	System.out.print(" "); 
+		            	} 
+		            for (int k = i; k >= 1; k--)
+		            {
+		                System.out.print(k);
+		            }
+		            for (int l = 2; l <= i; l++) { 
+		            	System.out.print(l); 
+		            	} 
+		            
+		            System.out.println(); }
+		           
+		   
+		            
+		   
+		            System.out.println();
+		        }
+		       
+		    }
+
+//output: 
+//1
+//212
+//32123
+
+public class Prime {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n=7,temp=0;
+		//int n=8,temp=0; ---------not prime number
+		for(int i=2;i<n;i++)
+		{
+			if(n%i==0){
+				temp= temp+1;
+			}
+		}
+		if(temp==0){
+			System.out.println(n+"is a prime number");
+		}
+		else
+			System.out.println(n+"is not a prime number");
+
+	}
+
+}
+//3)	Write a program to remove duplicates from an array in java.
+public class RemoveDuplicates {
+	public static int removeDuplicates(int a[],int n){
+		if(n==0 || n==1){
+		return n;
+		}
+		
+		int[]temp = new int[n];
+		int j=0;
+		
+		for(int i=0;i<n-1;i++){
+			if(a[i]!=a[i+1]){
+				temp[j++]=a[i];
+				
+			}
+		}
+		temp[j++] = a[n-1];
+		
+		for(int i=0;i<j;i++){
+			a[i]=temp[i];
+			
+		}
+		return j;
+		
+	}
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a[] = {5,5,3,3,6,7,7,8,8,9,10};
+		int n= a.length;
+		
+		n=removeDuplicates(a,n);
+		for(int i=0;i<n;i++){
+			System.out.print(a[i] + " ");
+		}
+
+	}
+
+}
+
+//output:5 3 6 7 8 9 10 
+
+public class ReverseStrwithoutinbuilt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s ="shyam";
+		String t="";
+		for(int i=0;i<s.length();i++)
+		{
+			t=s.charAt(i)+t;
+		}
+		System.out.println(t);
+	}
+	
+}
+
+//5)	Reverse words of a sentence.
+public class ReverseWord {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String s ="my name is pooja";
+		String t="";
+		for(int i=0;i<s.length();i++)
+		{
+			t=s.charAt(i)+t;
+		}
+		System.out.println(t);
+
+	}
+
+}
+//output  :ajoop si eman ym
+
+public class SecondLargest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a[]={10,2,1,3,4,5,6};
+		int temp=0;
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=i;j<a.length;j++)
+			{
+				if(a[i]<a[j]){
+					temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+			}
+		}
+		for(int i=1;i<a.length;i++){
+			System.out.println("second largest number is" + a[i]);
+			break;
+		}
+
+	}
+
+}
+
+//4)	write a program to calculate the square root of a number without using the Math.sqrt() function of JDK. 
+public class squareroot {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 30;
+		double i,precision=0.00001;
+		for(i=1;i*i <= n;i++);
+		for(--i;i*i<n;i+=precision);
+		System.out.println("sq root of given no is" +i);
+		
+			
+
+	}
+
+}
+   
+
+//output:sq root of given no is5.477229999981933
+
+public class Whitespacs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "m      y      name i     s Pooja";
+		System.out.println("original string:"+str);
+		str = str.replaceAll("\\s","");
+		System.out.println("after replacement:" +str);
+
+	}
+
+}
+
+
+//output: original string:m      y      name i     s Pooja
+//          after replacement:mynameisPooja
+
+
+
+
+
+
+
+
